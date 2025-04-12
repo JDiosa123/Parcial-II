@@ -6,6 +6,7 @@ public abstract class Criaturas {
     protected String nombre;
     protected int salud;
     protected int fuerza;
+    protected Arma arma;
  
     
     
@@ -14,6 +15,7 @@ public Criaturas(String nombre, int salud, int fuerza){
     this.fuerza = fuerza;
     this.nombre = nombre;
     this.salud = salud;
+    this.arma = arma;
     
 }    
 
@@ -53,6 +55,13 @@ public Criaturas(String nombre, int salud, int fuerza){
     return salud > 0;
 }
 
+  public Arma getArma() {
+        return arma;
+    
+}
+
+     
+     
     
 
 }
