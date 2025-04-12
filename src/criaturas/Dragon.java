@@ -1,34 +1,38 @@
 
 package criaturas;
 
-public class Dragon extends Criaturas implements Volador{
-    
-    public Dragon(String nombre, int salud, int fuerza){
-    super(nombre, salud, fuerza);
+
+public class Dragon extends Criaturas implements Volador {
+
+    public Dragon(String nombre, int salud, int fuerza) {
+        super(nombre, salud, fuerza);
     }
 
     @Override
-    public void atacar(Criaturas objetivo){
+    public void atacar(Criaturas objetivo) {
         int daño = fuerza * 2;
-        if(Arma!= null){
-            daño = Arma.atacarConArma(daño);
-            System.out.println(nombre + "atacar con arma: " + Arma.getNombre());
+        if (arma != null) {
+            arma.atacarConArma();
+            daño += arma.getDañoAdicional();
         }
-        System.out.println(nombre + "lanza fuego a " + objetivo.getNombre()+ " con fuerza" + daño);
+        System.out.println(nombre + " ataca con fuego causando " + daño + " de daño.");
         objetivo.defender(daño);
     }
+
     @Override
-    public void defender(int daño){
+    public void defender(int daño) {
         salud -= daño;
-        System.out.println(nombre + "recibe" + daño + " de daño. Su salud actual es: "+ salud);        
+        System.out.println(nombre + " recibió " + daño + " de daño. Salud restante: " + salud);
     }
+
     @Override
-    public void volar(){
-        System.out.println(nombre + "esta volando");
+    public void volar() {
+        System.out.println(nombre + " está volando.");
     }
+
     @Override
-    
-    public void aterrizar(){
-        System.out.println(nombre + "aterriza");
+    public void aterrizar() {
+        System.out.println(nombre + " aterrizó.");
     }
+
 }
