@@ -2,21 +2,34 @@
 package criaturas;
 
 public abstract class Criaturas {
-
     protected String nombre;
     protected int salud;
     protected int fuerza;
- 
-    
-    
-public Criaturas(String nombre, int salud, int fuerza){
-    
-    this.fuerza = fuerza;
-    this.nombre = nombre;
-    this.salud = salud;
-    
-}    
+    protected Arma arma; // composición
 
+    public Criaturas(String nombre, int salud, int fuerza) {
+        this.nombre = nombre;
+        this.salud = salud;
+        this.fuerza = fuerza;
+    }
+
+    public void equiparArma(Arma arma) {
+        this.arma = arma;
+    }
+
+    public void desequiparArma() {
+        this.arma = null;
+    }
+
+    public boolean estaViva() {
+        return salud > 0;
+    }
+
+    public abstract void atacar(Criaturas objetivo);
+
+    public abstract void defender(int daño);
+
+    
     public String getNombre() {
         return nombre;
     }
@@ -41,18 +54,11 @@ public Criaturas(String nombre, int salud, int fuerza){
         this.fuerza = fuerza;
     }
 
+    public Arma getArma() {
+        return arma;
+    }
 
-     public abstract void atacar(Criaturas objeto);
-     public abstract void defender(int daño);
-     
-     
-     
-     
-     public boolean estaViva(){
-    
-    return salud > 0;
-}
-
-    
-
+    public void setArma(Arma arma) {
+        this.arma = arma;
+    }
 }
