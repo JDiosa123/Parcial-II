@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package criaturas;
 
-/**
- *
- * @author j3157
- */
-public class Mago {
+
+public interface Mago {
+    
+    void lanzarHechizo();
+    void aprenderHechizo();
+    
     
 }
