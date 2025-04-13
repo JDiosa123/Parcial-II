@@ -1,6 +1,6 @@
 
 package criaturas;
-
+import Arma.Arma;
 
 
 public class Mago extends Criaturas implements Magico {
@@ -14,9 +14,9 @@ public class Mago extends Criaturas implements Magico {
         int daño = fuerza;
         if (arma != null) {
             daño += arma.atacarConArma();
-            System.out.println(nombre + " lanza un hechizo con " + arma.getNombre() + " causando " + daño + " de daño.");
+            System.out.println(nombre + " lanza un hechizo con " + arma.getNombre() + " causando " + daño + " de Impacto.");
         } else {
-            System.out.println(nombre + " lanza un hechizo causando " + daño + " de daño.");
+            System.out.println(nombre + " lanza un hechizo causando " + daño + " de Impacto.");
         }
         objetivo.defender(daño);
     }
@@ -24,12 +24,12 @@ public class Mago extends Criaturas implements Magico {
     @Override
     public void defender(int daño) {
         salud -= daño;
-        System.out.println(nombre + " recibe " + daño + " de daño. Salud restante: " + salud);
+        System.out.println(nombre + " recibe " + daño + " de Impacto. Salud restante: " + salud);
     }
 
     @Override
     public void lanzarHechizo() {
-        System.out.println(nombre + " lanza un hechizo mágico.");
+        System.out.println(nombre + " lanza un hechizo magico.");
     }
 
     @Override

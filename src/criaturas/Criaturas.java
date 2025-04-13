@@ -1,6 +1,8 @@
 
 package criaturas;
 
+import Arma.Arma;
+
 public abstract class Criaturas {
     protected String nombre;
     protected int salud;

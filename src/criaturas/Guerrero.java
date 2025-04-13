@@ -1,6 +1,5 @@
-
 package criaturas;
-
+import Arma.Arma;
 
 public class Guerrero extends Criaturas {
 
@@ -14,9 +13,9 @@ public class Guerrero extends Criaturas {
         int daño = fuerza;
         if (arma != null) {
             daño += arma.atacarConArma();
-            System.out.println(nombre + " ataca con " + arma.getNombre() + " causando " + daño + " de daño.");
+            System.out.println(nombre + " ataca con " + arma.getNombre() + " causando " + daño + " de Impacto.");
         } else {
-            System.out.println(nombre + " ataca con espada causando " + daño + " de daño.");
+            System.out.println(nombre + " ataca con espada causando " + daño + " de Impacto.");
         }
         objetivo.defender(daño);
     }
@@ -24,7 +23,7 @@ public class Guerrero extends Criaturas {
     @Override
     public void defender(int daño) {
         salud -= daño;
-        System.out.println(nombre + " recibe " + daño + " de daño. Salud restante: " + salud);
+        System.out.println(nombre + " recibe " + daño + " de Impacto. Salud restante: " + salud);
     }
 }
 
